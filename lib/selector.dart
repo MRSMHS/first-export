@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+void main(){
+  return runApp(Selector());
+}
 
 class Selector extends StatefulWidget {
   const Selector({ Key? key }) : super(key: key);
@@ -10,8 +13,6 @@ class Selector extends StatefulWidget {
 class _SelectorState extends State<Selector> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    return MaterialApp(home: Scaffold(appBar: AppBar(title: Text('jkhjd'),),),);
   }
 }
