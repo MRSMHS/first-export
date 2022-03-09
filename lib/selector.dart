@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-void maine(){
+void main(){
   return runApp(Selector());
 }
 
