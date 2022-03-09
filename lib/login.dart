@@ -15,8 +15,14 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Scaffold(body: Center(child: Text('dfkj')),),
+    return MaterialApp(home: Scaffold(
+      appBar: AppBar(title: Text('ورود',style: TextStyle(color: Colors.black45,fontFamily: 'IRS',fontSize: 22),),),
+      body: LoginUi(),),
       
     );
+  }
+
+  Widget LoginUi(){
+    return Card();
   }
 }
