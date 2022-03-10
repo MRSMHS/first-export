@@ -18,10 +18,10 @@ Widget Example=SplashScreenView(
   navigateRoute:Selector(),
   pageRouteTransition:PageRouteTransition.Normal ,
   backgroundColor: Colors.white,
-   duration:1000 ,
+   duration:3000 ,
    imageSize:200 ,
    imageSrc: 'assets/splashscreen_image.png',
-   speed:100 ,
+   speed:50 ,
    text: ('به فروشگاه من خوش آمدید'),
    textStyle: titile_style,
    textType:TextType.TyperAnimatedText ,);
