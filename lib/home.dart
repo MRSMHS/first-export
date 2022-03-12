@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Product.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 void main(){
@@ -16,6 +17,12 @@ class _HomeState extends State<Home> {
       static const titile_style=TextStyle(fontFamily: 'IRS',fontSize: 18,
       fontWeight:FontWeight.w800,color: Colors.teal,letterSpacing: 0.5 );
       int _selectedIndex=1;
+      List<Product>_items=[
+        Product('توضیحات محصول', '1', 'لینک تصویر', 'کنسول بازی با ظرفیت 1 ترابایت', '15385000'),
+        Product('توضیحات محصول', '1', 'لینک تصویر', 'گوشی موبایل', '6200000'),
+        Product('توضیحات محصول', '1', 'لینک تصویر', 'لپ تاپ دانش آموزی ', '9800000'),
+        Product('توضیحات محصول', '1', 'لینک تصویر', 'ماشین اصلاح', '1350000'),
+      ];
 
   @override
   Widget build(BuildContext context) {
