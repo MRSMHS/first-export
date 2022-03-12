@@ -77,9 +77,18 @@ Widget MainUi(){
 ,InkWell(onTap:(){} ,
 child:Container(height: 60,margin:EdgeInsets.fromLTRB(30,0, 30, 0),
 child: Row(crossAxisAlignment:CrossAxisAlignment.center,mainAxisAlignment:MainAxisAlignment.spaceBetween  ,
-  children: [Icon(Icons.arrow_back_ios_new_rounded),Text('پرفروشترین محصولات',style: titile_style ,)],)) ,)
+  children: [Icon(Icons.arrow_back_ios_new_rounded),Text('پرفروشترین محصولات',style: titile_style ,)],)) ,),
+  Container(height: 310,child: Padding(padding: EdgeInsets.all(10),
+  child: GridView.count(
+    crossAxisCount: 1,crossAxisSpacing: 10, mainAxisSpacing: 10, scrollDirection: Axis.horizontal,
+    children: List.generate(_items.length, (int position) {
+      return generatItems(_items[position],context);
+    }),),),)
     ],),
   );
+}
+Card generatItems(Product product,BuildContext context ){
+return Card();
 }
 
 }
