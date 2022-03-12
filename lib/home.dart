@@ -18,10 +18,10 @@ class _HomeState extends State<Home> {
       fontWeight:FontWeight.w800,color: Colors.teal,letterSpacing: 0.5 );
       int _selectedIndex=1;
       List<Product>_items=[
-        Product('توضیحات محصول', '1', 'لینک تصویر', 'کنسول بازی با ظرفیت 1 ترابایت', '15385000'),
-        Product('توضیحات محصول', '1', 'لینک تصویر', 'گوشی موبایل', '6200000'),
-        Product('توضیحات محصول', '1', 'لینک تصویر', 'لپ تاپ دانش آموزی ', '9800000'),
-        Product('توضیحات محصول', '1', 'لینک تصویر', 'ماشین اصلاح', '1350000'),
+        Product('توضیحات محصول', '1', 'https://s6.uupload.ir/files/console_hr6m.jpg', 'کنسول بازی با ظرفیت 1 ترابایت', '15385000'),
+        Product('توضیحات محصول', '1', 'https://s6.uupload.ir/files/console_hr6m.jpg', 'گوشی موبایل', '6200000'),
+        Product('توضیحات محصول', '1', 'https://s6.uupload.ir/files/console_hr6m.jpg', 'لپ تاپ دانش آموزی ', '9800000'),
+        Product('توضیحات محصول', '1', 'https://s6.uupload.ir/files/console_hr6m.jpg', 'ماشین اصلاح', '1350000'),
       ];
 
   @override
@@ -78,17 +78,53 @@ Widget MainUi(){
 child:Container(height: 60,margin:EdgeInsets.fromLTRB(30,0, 30, 0),
 child: Row(crossAxisAlignment:CrossAxisAlignment.center,mainAxisAlignment:MainAxisAlignment.spaceBetween  ,
   children: [Icon(Icons.arrow_back_ios_new_rounded),Text('پرفروشترین محصولات',style: titile_style ,)],)) ,),
-  Container(height: 310,child: Padding(padding: EdgeInsets.all(10),
+  Container(height:340,child: Padding(padding: EdgeInsets.all(10),
   child: GridView.count(
     crossAxisCount: 1,crossAxisSpacing: 10, mainAxisSpacing: 10, scrollDirection: Axis.horizontal,
     children: List.generate(_items.length, (int position) {
       return generatItems(_items[position],context);
-    }),),),)
+    }),),),),
+    SizedBox(height:5,),
+       Container(height: 120,width: double.infinity,
+       child: Card(shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)) ,elevation: 10,
+       child:Image.network('https://s6.uupload.ir/files/ban_4_jxpg.jpg',fit: BoxFit.fill,) ,),),
+       Container(height: 120,width: double.infinity,
+       child: Builder(
+         builder: (context) {
+           return Row(
+           children: [
+             Container(height: 120,width: MediaQuery.of(context).size.width/2,child: Card(shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)) ,elevation: 10,
+           child:Image.network('https://s6.uupload.ir/files/ban_5_s0pa.jpg',fit: BoxFit.fill,) ,),),
+             Container(height: 120,width: MediaQuery.of(context).size.width/2,
+             child:Card(shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)) ,elevation: 10,
+           child:Image.network('https://s6.uupload.ir/files/ban_6_9iey.jpg',fit: BoxFit.fill,) ,) ,)
+           ],);
+         }
+       ),)
     ],),
   );
 }
 Card generatItems(Product product,BuildContext context ){
-return Card();
+return Card(elevation: 10,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)), child: InkWell(onTap: (){},child: Center(
+  child: Column(mainAxisAlignment:MainAxisAlignment.center ,children: [
+    Container(height: 170,width: 190,child: Image.network(product.image),),
+    SizedBox(height: 5,),
+    Container(height:50,width:190 ,child: Text(product.name,textDirection: TextDirection.rtl,
+    style: TextStyle(fontFamily: 'IRS',fontSize: 15,
+      fontWeight:FontWeight.w800,color: Colors.teal,letterSpacing: 0.5 ),), alignment:Alignment.center ,),
+      Divider(height: 1,color: Colors.grey,thickness: 2,endIndent: 15,indent: 15,),
+       SizedBox(height: 5,),
+       Padding(
+         padding: const EdgeInsets.fromLTRB(30,0, 0, 0),
+         child: Row(mainAxisAlignment:MainAxisAlignment.center ,
+           children: [
+             Text('تومان',style: titile_style,),
+             Text(product.price,style: titile_style,),
+           ],),
+       ),
+       
+
+  ],),),),);
 }
 
 }
